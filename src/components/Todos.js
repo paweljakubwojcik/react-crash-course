@@ -15,6 +15,7 @@ class Todos extends React.Component {
     }
 }
 
+// validating propTypes #goodpractise
 Todos.propTypes = {
     todos: PropTypes.array.isRequired
 }
