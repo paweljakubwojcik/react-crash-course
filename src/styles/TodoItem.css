@@ -1,0 +1,27 @@
+.TodoItem {
+    background: #f4f4f4;
+    padding: 10px;
+    border-bottom: 1px #ccc dotted;
+    display: flex;
+}
+
+.TodoItem input {
+    margin: 5px;
+    cursor: pointer;
+}
+
+.TodoItem button {
+    background-color: rgba(226, 59, 59, 0.768);
+    border: none;
+    margin: 0 5px;
+    margin-left: auto;
+    padding: 1px 7px;
+    color: white;
+
+    transition: filter .2s;
+}
+
+.TodoItem button:hover{
+    cursor: pointer;
+    filter:brightness(.9);
+}
