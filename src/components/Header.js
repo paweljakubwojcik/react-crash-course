@@ -6,7 +6,5 @@ export default function Header() {
         <header>
             <h1>TodoList</h1>
         </header>
-
-
     )
 }
