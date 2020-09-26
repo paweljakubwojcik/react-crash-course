@@ -1,9 +1,13 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
 import './App.css';
 
+//components
 import Todos from './components/Todos'
 import Header from './components/Header'
 import AddTodo from './components/AddTodo'
+import About from './components/pages/About';
 
 class App extends React.Component {
   state = {
@@ -60,13 +64,23 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <Header></Header>
-        <div className="container">
-          <AddTodo addTodo={this.addTodo}></AddTodo>
-          <Todos todos={this.state.todos} markComplete={this.markComplete} delete={this.delete} />
+      <Router>
+        <div className="App">
+          <Header />
+
+          <Route exact path='/' render={props => (
+            <React.Fragment>
+              <div className="container">
+                <AddTodo addTodo={this.addTodo}></AddTodo>
+                <Todos todos={this.state.todos} markComplete={this.markComplete} delete={this.delete} />
+              </div>
+            </React.Fragment>
+          )} />
+
+          <Route path='/about' component={About} />
+
         </div>
-      </div>
+      </Router>
     );
   }
 }

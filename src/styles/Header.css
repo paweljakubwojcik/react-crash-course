@@ -1,9 +1,18 @@
-header{
+header {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    margin:10px 0;
+    margin: 10px 0;
 }
-header h1{
-    display:block;
+header h1 {
+    display: block;
     border-bottom: 1px solid #484848c6;
+}
+.links {
+    margin-top: 10px;
+}
+
+.links .link--active {
+    font-weight: bold;
 }
