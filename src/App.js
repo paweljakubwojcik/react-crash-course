@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import Todos from './components/Todos'
+import Header from './components/Header'
 
 class App extends React.Component {
   state = {
@@ -46,6 +47,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Header></Header>
         <Todos todos={this.state.todos} markComplete={this.markComplete} delete={this.delete} />
       </div>
     );
