@@ -26,6 +26,19 @@ class App extends React.Component {
     ]
   }
 
+  addTodo = (tittle) => {
+    //copy the array
+    const todos = this.state.todos.map(i => i)
+    const newTodo = {
+      id: (todos.pop().id + 1),
+      tittle,
+      complited: false
+    }
+    this.setState({
+      todos: [...this.state.todos, newTodo]
+    })
+  }
+
   //Toggle complete
   markComplete = (id) => {
     this.setState({
@@ -50,7 +63,7 @@ class App extends React.Component {
       <div className="App">
         <Header></Header>
         <div className="container">
-          <AddTodo></AddTodo>
+          <AddTodo addTodo={this.addTodo}></AddTodo>
           <Todos todos={this.state.todos} markComplete={this.markComplete} delete={this.delete} />
         </div>
       </div>
